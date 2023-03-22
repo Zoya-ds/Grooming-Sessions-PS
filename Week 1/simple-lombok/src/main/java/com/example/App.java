@@ -1,7 +1,6 @@
 package com.example;
 
 import java.util.Scanner;
-import com.example.userService;
 
 public class App {
     public static void main(String[] args) {
@@ -19,57 +18,29 @@ public class App {
         System.out.print("Enter your contact number: ");
         long number = sc.nextLong();
 
-        userService userService = new userService();
-        user us1 = userService.createUser(name, email, number);
+        user us1 = new user(name, email, number); // use of allargsconstructor annotation
+        System.out.println("1st User succesfully created!");
 
-        System.out.println("Welcome " + us1.getName().split(" ")[0] + "! Choose an option to proceed:");
-        boolean start = true;
-        while (start) {
+        App app = new App();
+        app.displayUser(us1);
 
-            System.out.println("1. Display user info");
-            System.out.println("2. Update user info");
-            System.out.println("3. Exit");
+        user us2 = new user(); // use of noargsconstructor annotation
 
-            int choice = sc.nextInt();
+        us2.setName(name); // use of setters annotation
+        us2.setEmail(email);
+        us2.setContactNumber(number);
 
-            switch (choice) {
-                case 1:
-                    userService.displayUser(us1);
-                    break;
-                case 2:
-                    int flag = 99;
-                    System.out.println("Welcome to the update menu!");
-                    while (flag != 0) {
-                        System.out.println("1. Update your name");
-                        System.out.println("2. Update your email");
-                        System.out.println("3. Update your contact number");
-                        System.out.println("4. Go back to previous menu");
+        System.out.println("2nd User succesfully created!");
+        app.displayUser(us2);
 
-                        int ch = sc.nextInt();
-                        switch (ch) {
-                            case 1:
-                                userService.updateUserName(us1);
-                                break;
-                            case 2:
-                                userService.updateUserEmail(us1);
-                                break;
-                            case 3:
-                                userService.updateUserContactNumber(us1);
-                                break;
-                            case 4:
-                                flag = 0;
-                                break;
-                            default:
-                                System.out.println("Invalid choice1");
-                        }
-                    }
-                    break;
-                case 3:
-                    start = false;
-                    break;
-                default:
-                    System.out.println("Invalid choice!");
-            }
-        }
+    }
+
+    public void displayUser(user us) {
+
+        System.out.println("User details:");
+        System.out.println("Name of the user: " + us.getName()); // use of getters annotation
+        System.out.println("Email of the user: " + us.getEmail());
+        System.out.println("Contact Number of the user: " + us.getContactNumber() + "\n");
+
     }
 }
