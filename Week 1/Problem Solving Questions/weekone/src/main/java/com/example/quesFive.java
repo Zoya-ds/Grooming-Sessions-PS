@@ -5,7 +5,8 @@ public class quesFive {
     enum Days {
 
         SUNDAY,
-        MONDAY
+        MONDAY,
+        TUESDAY
     }
 
     public static void main(String[] args) {
