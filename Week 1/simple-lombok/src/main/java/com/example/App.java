@@ -33,6 +33,8 @@ public class App {
         System.out.println("2nd User succesfully created!");
         app.displayUser(us2);
 
+        user us3 = new user(us1);
+
     }
 
     public void displayUser(user us) {
