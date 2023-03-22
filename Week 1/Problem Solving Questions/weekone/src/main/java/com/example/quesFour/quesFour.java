@@ -1,6 +1,6 @@
 package com.example.quesFour;
 
-public class quesFour extends User {
+public class quesFour {
 
     public static void main(String[] args) {
 
