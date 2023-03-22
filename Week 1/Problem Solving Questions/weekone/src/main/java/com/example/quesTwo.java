@@ -1,6 +1,6 @@
 package com.example;
 
-public class quesTwo extends User {
+public class quesTwo {
 
     public static void main(String[] args) {
 
@@ -8,7 +8,6 @@ public class quesTwo extends User {
 
         System.out.println(us.firstName);
         System.out.println(us.email);
-        // System.out.println(us.password); //program will not compile, because variable
-        // cannot be accessed
+        // System.out.println(us.password); //error because variable cannot be accessed
     }
 }
