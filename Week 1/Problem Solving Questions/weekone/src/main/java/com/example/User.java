@@ -6,4 +6,12 @@ public class User {
     protected String email = "zoya@gmail.com";
     private String password = "zoya321";
 
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String newPassword) {
+        password = newPassword;
+    }
+
 }
