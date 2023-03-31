@@ -32,7 +32,8 @@ public class staticClass {
 
     public static void main(String[] args) {
         // Ask
-        // userOne uOne= new userOne();
+        // userOne uOne1 = new userOne();
+        // uOne1.displayMessage();
 
         staticClass.userTwo uTwo = new staticClass.userTwo();
         uTwo.displayUser();
