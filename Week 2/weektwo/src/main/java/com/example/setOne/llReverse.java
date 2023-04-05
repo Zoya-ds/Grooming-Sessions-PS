@@ -1,4 +1,5 @@
-package com.example;
+//Write a Java program to iterate a linked list in reverse order.
+package com.example.setOne;
 
 import java.util.Iterator;
 import java.util.LinkedList;
@@ -19,11 +20,13 @@ public class llReverse {
         // reversed
         LinkedList<Integer> reversedLinkedList = new LinkedList<>();
 
-        Iterator descItr = linkedList.descendingIterator();
+        Iterator<Integer> descItr = linkedList.descendingIterator();
         while (descItr.hasNext()) {
             reversedLinkedList.add((Integer) descItr.next());
         }
 
         System.out.println(reversedLinkedList);
+
+        // can be done using listIterator.hasprevious()
     }
 }

@@ -4,6 +4,10 @@ import java.lang.reflect.InvocationTargetException;
 
 public class dynamicLoading {
 
+    static {
+        System.out.println("me is first");
+    }
+
     public static void main(String[] args)
             throws ClassNotFoundException, InstantiationException, IllegalAccessException, IllegalArgumentException,
             InvocationTargetException, NoSuchMethodException, SecurityException {

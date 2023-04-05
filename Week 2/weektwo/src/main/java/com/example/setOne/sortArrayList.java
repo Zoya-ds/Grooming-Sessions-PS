@@ -1,4 +1,6 @@
-package com.example;
+//Write a Java program to sort a given array list
+
+package com.example.setOne;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -44,3 +46,6 @@ class SortComp implements Comparator<Integer> {
         return a - b;
     }
 }
+
+// try comparator with lambda
+// try comparable as well

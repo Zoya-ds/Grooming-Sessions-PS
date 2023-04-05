@@ -1,4 +1,6 @@
-package com.example;
+//Program to Implement LinkedList
+
+package com.example.setOne;
 
 import java.util.Scanner;
 
@@ -78,23 +80,28 @@ public class llImpl {
     // only the first occurence will be removed
     static void removeElement(Node head, int element) {
 
-        Node prev = null;
-        Node ptr = head;
+        if (head.data == element) {
+            head = head.next;
+        } else {
 
-        while (ptr != null) {
-            if (ptr.data == element) {
-                prev.next = ptr.next;
-                break;
+            Node prev = null;
+            Node ptr = head;
+
+            while (ptr != null) {
+                if (ptr.data == element) {
+                    prev.next = ptr.next;
+                    break;
+                }
+                prev = ptr;
+                ptr = ptr.next;
             }
-            prev = ptr;
-            ptr = ptr.next;
-        }
 
-        if (ptr == null)
-            System.out.println("element not found!");
-        else {
-            System.out.println("Updated linked list:");
-            display(head);
+            if (ptr == null)
+                System.out.println("element not found!");
+            else {
+                System.out.println("Updated linked list:");
+                display(head);
+            }
         }
 
     }

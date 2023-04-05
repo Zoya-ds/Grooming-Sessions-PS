@@ -1,4 +1,5 @@
-package com.example;
+//Write a Java program to get the first and last occurrence of the specified elements in a linked list
+package com.example.setOne;
 
 import java.util.LinkedList;
 import java.util.Scanner;
@@ -22,8 +23,7 @@ public class firstLastOccurenceLL {
         int search = sc.nextInt();
         sc.close();
 
-        int firstPos = -1;
-        int lastPos = -1;
+        int firstPos = -1, lastPos = -1;
         int index = 0;
 
         for (Integer i : linkedList) {

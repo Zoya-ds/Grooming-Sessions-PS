@@ -1,4 +1,4 @@
-package com.example;
+package com.example.setOne;
 
 public class Node {
     int data;

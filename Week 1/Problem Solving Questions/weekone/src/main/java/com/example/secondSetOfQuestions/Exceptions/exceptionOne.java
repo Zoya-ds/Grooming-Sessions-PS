@@ -2,8 +2,6 @@ package com.example.secondSetOfQuestions.Exceptions;
 
 import java.util.Scanner;
 
-import com.example.firstSetOfQuestions.quesOne;
-
 public class exceptionOne {
 
     public static void main(String[] args) {
@@ -20,6 +18,11 @@ public class exceptionOne {
             quotient = num1 / num2;
         } catch (ArithmeticException e) {
             System.out.println(e.getMessage());
+            // e.printStackTrace();
+            // System.error();
+        } finally {
+            sc.close();
+            System.out.println("Done..");
         }
 
         System.out.println("Quotient: " + quotient);

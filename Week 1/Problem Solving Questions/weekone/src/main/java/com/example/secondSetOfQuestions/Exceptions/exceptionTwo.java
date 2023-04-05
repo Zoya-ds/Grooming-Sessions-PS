@@ -2,9 +2,13 @@ package com.example.secondSetOfQuestions.Exceptions;
 
 import java.util.Scanner;
 
+// we can create custom errors
+// but cannot handle them
+//comes under Iterable
+
 public class exceptionTwo {
 
-    public static void main(String[] args) throws NameNotFoundException, InvalidMobileNumberException {
+    public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
         System.out.print("Enter name: ");

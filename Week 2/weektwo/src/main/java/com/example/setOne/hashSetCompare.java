@@ -1,4 +1,5 @@
-package com.example;
+//Write a Java program to compare two hash set
+package com.example.setOne;
 
 import java.util.HashSet;
 
@@ -17,6 +18,7 @@ public class hashSetCompare {
         hashSet2.add(1);
         hashSet2.add(8);
         hashSet2.add(5);
+        hashSet2.add(3);
 
         HashSet<Integer> hashSet3 = new HashSet<>(hashSet1);
 

@@ -1,6 +1,9 @@
-package com.example;
+//Program to add, retrieve & remove element from ArrayList
+
+package com.example.setOne;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Iterator;
 
 public class arrayListOps {
@@ -9,10 +12,13 @@ public class arrayListOps {
 
         ArrayList<Integer> arrList = new ArrayList<>(); // can define intial capacity
 
+        System.out.println();
+
         // add elements: method 1
         arrList.add(1);
         arrList.add(4);
         arrList.add(3);
+        arrList.addAll(Arrays.asList(0, 2, 9, 7));
         // add elements: method 2
         arrList.add(1, 5);
 
@@ -32,7 +38,7 @@ public class arrayListOps {
 
         // retrieval: method 3
         System.out.println("1st list: ");
-        Iterator itr = arrList.iterator();
+        Iterator<Integer> itr = arrList.iterator();
         while (itr.hasNext()) {
             System.out.println(itr.next());
         }
@@ -47,8 +53,16 @@ public class arrayListOps {
         arrList2.remove(2); // element at given index
         System.out.println(arrList2);
 
-        // remove an element: method 2
+        // remove an element: method 3
         arrList2.removeAll(arrList); // removes common elements
         System.out.println(arrList2);
+
     }
 }
+
+// create a custom object and try to remove it without overriding the equals
+// method
+// primitive datatypes is not allowed because collections means a group of
+// objects and wrapper classes convert primitive datatypes into objects.
+// Example- int to Integer
+// implement all Collection objects with custom objects
