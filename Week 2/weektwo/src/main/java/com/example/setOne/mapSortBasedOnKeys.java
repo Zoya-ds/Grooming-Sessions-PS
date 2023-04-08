@@ -18,6 +18,7 @@ public class mapSortBasedOnKeys {
         map1.put(3, "C");
 
         System.out.println(map1);
+
     }
 }
 

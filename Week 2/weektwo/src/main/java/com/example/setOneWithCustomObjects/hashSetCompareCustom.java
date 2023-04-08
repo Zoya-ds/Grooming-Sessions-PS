@@ -23,9 +23,9 @@ public class hashSetCompareCustom {
         hashSet2.add(e2);
         hashSet2.add(e1);
 
-        System.out.println(hashSet1.equals(hashSet2));
+        System.out.println(hashSet1.equals(hashSet2));//
 
-        hashSet2.add(new Employee(4, null, null));
+        hashSet2.add(new Employee(1, "abc", "abc@gm.com"));
         System.out.println(hashSet1.equals(hashSet2));
     }
 
