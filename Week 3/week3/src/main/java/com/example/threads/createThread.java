@@ -1,47 +1,44 @@
+//1.	Write a program to create Thread using Thread class.
 package com.example.threads;
 
 public class createThread extends Thread {
 
     @Override
     public void run() {
-        System.out.println("Thread is running.");
-    }
+        for (int i = 0; i < 10; i += 2) {
+            System.out.println(i + " " + Thread.currentThread().getName());
 
-    @Override
-    public synchronized void start() {
-        System.out.println("Starting the thread...");
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
     }
 
     public static void main(String[] args) throws InterruptedException {
 
         createThread thread1 = new createThread();
-        thread1.start();
-        thread1.run();
 
-        Thread thread2 = new Thread("Thread 2");
-        System.out.println(thread2.getState());
-        thread2.start();
-        // thread2.start(); //Illegal Thread State Exception
+        // thread1.run(); // does not start a new thread and proceed with the main
+        // thread
+        // thread1.start(); // starts a separate thread
 
+        createThread thread2 = new createThread();
         System.out.println(thread2.getName());
         System.out.println(thread2.getState());
 
-        Runnable r1 = new Thread();
-        Thread thread3 = new Thread(r1, "Thread 3");
+        thread1.start();
+        thread2.start();
+        // thread2.start(); //Illegal Thread State Exception
+
+        Thread thread3 = new Thread(new createThread(), "Thread 4");
         thread3.start();
 
-        Thread.sleep(3000);
-        thread1.run();
-
-        ThreadGroup threadGroup = new ThreadGroup("new pool of threads");
-        Thread thread4 = new Thread(threadGroup, "One");
-        Thread thread5 = new Thread(threadGroup, "Two");
-
-        System.out.println(thread1.getName() + " " + thread1.getThreadGroup());
-        System.out.println(thread2.getName() + " " + thread2.getThreadGroup());
-        System.out.println(thread3.getName() + " " + thread3.getThreadGroup());
-        System.out.println(thread4.getName() + " " + thread4.getThreadGroup());
-        System.out.println(thread5.getName() + " " + thread5.getThreadGroup() + Thread.currentThread());
+        for (int i = 1; i <= 3; i++) {
+            createThread thread4 = new createThread();
+            thread4.start();
+        }
 
     }
 }

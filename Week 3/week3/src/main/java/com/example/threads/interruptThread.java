@@ -1,20 +1,23 @@
+//3.	Write a program to interrupt a Thread.
 package com.example.threads;
 
-public class interruptThread {
+public class interruptThread implements Runnable {
+
+    @Override
+    public void run() {
+        // try {
+        System.out.println("thread has started");
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            System.out.println("Thread interrupted..." + e);
+        }
+        System.out.println("thread is running again");
+
+    }
 
     public static void main(String[] args) throws InterruptedException {
-        Thread thread1 = new Thread(new Runnable() {
-            @Override
-            public void run() {
-                try {
-                    System.out.println("thread has started");
-                    Thread.sleep(3000);
-                    System.out.println("thread is running");
-                } catch (InterruptedException e) {
-                    throw new RuntimeException("Thread interrupted..." + e);
-                }
-            }
-        });
+        Thread thread1 = new Thread(new interruptThread());
 
         thread1.start();
         try {

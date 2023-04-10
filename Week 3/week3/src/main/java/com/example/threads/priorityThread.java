@@ -1,3 +1,4 @@
+//4.	Write a program to set the Thread priority.
 package com.example.threads;
 
 public class priorityThread {
@@ -6,16 +7,13 @@ public class priorityThread {
 
         Thread thread1 = new Thread();
 
-        System.out.println(thread1.getPriority());
+        System.out.println(thread1.getName() + " " + thread1.getPriority());
 
         thread1.setPriority(1);
-        System.out.println(thread1.getPriority());
+        System.out.println(thread1.getName() + " " + thread1.getPriority());
 
-        System.out.println(Thread.currentThread().getName() + " " + Thread.currentThread().getPriority());
-
-        Thread.currentThread().setPriority(10);
-        // System.out.println(thread1.getPriority());
-        System.out.println(Thread.currentThread().getName() + " " + Thread.currentThread().getPriority());
+        thread1.setPriority(10);
+        System.out.println(thread1.getName() + " " + thread1.getPriority());
 
     }
 }
