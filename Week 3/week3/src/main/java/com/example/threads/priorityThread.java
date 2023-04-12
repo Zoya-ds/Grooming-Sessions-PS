@@ -17,3 +17,6 @@ public class priorityThread {
 
     }
 }
+
+// synchronised
+// inter thread communication

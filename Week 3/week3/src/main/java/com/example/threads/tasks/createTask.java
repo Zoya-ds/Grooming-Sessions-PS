@@ -1,5 +1,5 @@
 //2.	How will you create a task & execute it.
-package com.example.threads;
+package com.example.threads.tasks;
 
 public class createTask implements Runnable {
 

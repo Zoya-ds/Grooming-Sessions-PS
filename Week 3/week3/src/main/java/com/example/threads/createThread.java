@@ -3,8 +3,15 @@ package com.example.threads;
 
 public class createThread extends Thread {
 
+    // LOOK INTO THIS!!
+    // createThread() {
+    // start();
+    // }
+
     @Override
     public void run() {
+
+        // prints eeven numbers
         for (int i = 0; i < 10; i += 2) {
             System.out.println(i + " " + Thread.currentThread().getName());
 
@@ -20,8 +27,8 @@ public class createThread extends Thread {
 
         createThread thread1 = new createThread();
 
-        // thread1.run(); // does not start a new thread and proceed with the main
-        // thread
+        // thread1.run(); //a new thread is not created and proceed with the main
+        // thread stack
         // thread1.start(); // starts a separate thread
 
         createThread thread2 = new createThread();
@@ -30,7 +37,8 @@ public class createThread extends Thread {
 
         thread1.start();
         thread2.start();
-        // thread2.start(); //Illegal Thread State Exception
+        // thread2.start(); //Illegal Thread State Exception, cannot be restarted after
+        // termination
 
         Thread thread3 = new Thread(new createThread(), "Thread 4");
         thread3.start();

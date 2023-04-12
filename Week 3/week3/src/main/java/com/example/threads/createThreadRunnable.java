@@ -6,7 +6,7 @@ public class createThreadRunnable implements Runnable {
     @Override
     public void run() {
         for (int i = 1; i <= 5; i++) {
-            System.out.println(i);
+            System.out.println(i + " " + Thread.currentThread().getName() + " " + Thread.currentThread().getId());
 
             try {
                 Thread.sleep(1000);
@@ -18,14 +18,14 @@ public class createThreadRunnable implements Runnable {
 
     public static void main(String[] args) {
 
-        createThreadRunnable thread = new createThreadRunnable();
-        thread.run(); // works
+        createThreadRunnable createThreadRunnable = new createThreadRunnable();
+        createThreadRunnable.run(); // works
         // thread.start(); //not found
 
-        Thread thread1 = new Thread(thread);
+        Thread thread1 = new Thread(createThreadRunnable);
         thread1.start(); // begins a new thread, voila!
 
-        Thread thread2 = new Thread(thread);
+        Thread thread2 = new Thread(createThreadRunnable);
         thread2.start();
         try {
             thread2.join();
