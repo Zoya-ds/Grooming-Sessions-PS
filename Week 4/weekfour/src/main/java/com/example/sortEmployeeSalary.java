@@ -1,5 +1,6 @@
 package com.example;
 
+//Given a list of Employee objects, sort the list based on employee salary? 
 import java.util.Arrays;
 import java.util.List;
 
@@ -8,6 +9,7 @@ public class sortEmployeeSalary {
     public static void main(String[] args) {
         List<Employee> list = createEmployees();
 
+        // list.stream().map(null)
         list.stream().sorted((o1, o2) -> o1.getSalary() - o2.getSalary()).forEach(i -> System.out.println(i.getId()));
     }
 
