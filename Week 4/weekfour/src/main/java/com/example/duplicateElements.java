@@ -4,6 +4,7 @@ package com.example;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
+import java.util.function.Consumer;
 
 public class duplicateElements {
 
@@ -14,10 +15,13 @@ public class duplicateElements {
         // Integer i = list.stream().max((a, b) -> a - b).orElse(10);// .forEach(i ->
         // System.out.println(i));
 
+        // Stream str= list.stream().sorted(Comparator.naturalOrder());
+        // System.out.println(str);
+        Consumer consumer = i -> System.out.println(i);
         list.stream()
                 .filter(i -> Collections.frequency(list, i) > 1)
                 .distinct()
-                .forEach(i -> System.out.println(i));
+                .forEach(consumer);
     }
 
 }

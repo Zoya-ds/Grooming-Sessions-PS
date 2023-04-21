@@ -2,7 +2,9 @@ package com.example;
 
 //Given a list of Employee objects, sort the list based on employee salary? 
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
+import java.util.function.Consumer;
 
 public class sortEmployeeSalary {
 
@@ -10,7 +12,8 @@ public class sortEmployeeSalary {
         List<Employee> list = createEmployees();
 
         // list.stream().map(null)
-        list.stream().sorted((o1, o2) -> o1.getSalary() - o2.getSalary()).forEach(i -> System.out.println(i.getId()));
+        Consumer<Employee> consumer = i -> System.out.println(i.getId());
+        list.stream().sorted(Comparator.comparingInt(Employee::getSalary)).forEach(consumer);
     }
 
     public static List<Employee> createEmployees() {

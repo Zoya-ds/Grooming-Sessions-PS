@@ -1,17 +1,16 @@
 package com.example;
 
 //How to check if list is empty in Java 8 using Optional, if not null iterate through the list and print the object?
-import java.util.ArrayList;
+
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
-import java.util.Objects;
 import java.util.Optional;
+import java.util.function.Consumer;
 
 public class emptyList {
     public static void main(String[] args) {
 
-        Optional<ArrayList<Employee>> list = Optional.empty();
+        Optional<List<Employee>> list = Optional.ofNullable(createEmployees());
         // Optional<List<Employee>> list = createEmployees();
 
         if (list.isEmpty())
@@ -19,7 +18,10 @@ public class emptyList {
         else {
             list.stream().forEach(o -> o.forEach(n -> System.out.println(n.getName())));
         }
-        list.ifPresentOrElse(i -> System.out.println(i), null);
+
+        Consumer c = i -> System.out.println(i);
+        Runnable r = () -> System.out.println("Empty list");
+        list.ifPresentOrElse(c, r);
 
         // Optional
         // .ofNullable(createEmployees())
