@@ -21,10 +21,8 @@ public class fibonacciNumber extends RecursiveAction {
 
     Integer findFibonacci(int num) {
 
-        if (num == 0)
-            return 0;
-        if (num == 1 || num == 2)
-            return 1;
+        if (num <= 1)
+            return num;
 
         return findFibonacci(num - 1) + findFibonacci(num - 2);
     }

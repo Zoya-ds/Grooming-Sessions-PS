@@ -7,28 +7,34 @@ import java.util.concurrent.RecursiveTask;
 public class sumOfRange extends RecursiveTask<Integer> {
 
     private int n;
+    volatile int result = 0;
 
     sumOfRange(int n) {
         this.n = n;
     }
 
     protected Integer compute() {
-        int result = 0;
+        if (n == 0)
+            return 0;
 
-        while (n > 0) {
-            result += n;
-            n--;
-        }
-        return result;
+        System.out.println(n);
+        return n + (new sumOfRange(n - 1)).fork().join();
+
+        // sumOfRange s1 = new sumOfRange(n);
+        // sumOfRange s2 = new sumOfRange(n);
+        // s1.fork();
+        // s2.fork();
+
     }
 
     public static void main(String[] args) {
 
         ForkJoinPool forkJoinPool = ForkJoinPool.commonPool();
 
-        sumOfRange sumOfRange = new sumOfRange(10);
+        sumOfRange sumOfRange = new sumOfRange(6);
 
-        int result = forkJoinPool.invoke(sumOfRange);
+        int result = forkJoinPool.invoke(sumOfRange); // await and obtain result
+
         System.out.println(result);
     }
 }
