@@ -1,17 +1,15 @@
 package com.example.structural.bridge;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
+public class Square extends Shape {
 
-@Getter
-@AllArgsConstructor
-public class Square implements IShape {
-
-    private int edge;
+    Square(Color c) {
+        super(c);
+    }
 
     @Override
-    public int area() {
-        return (int) Math.pow(edge, 2);
+    public void applyColor() {
+        System.out.print("Color of the square: ");
+        color.applyColor();
     }
 
 }

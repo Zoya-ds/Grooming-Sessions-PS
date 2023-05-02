@@ -1,17 +1,15 @@
 package com.example.structural.bridge;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
+public class Circle extends Shape {
 
-@Getter
-@AllArgsConstructor
-public class Circle implements IShape {
-
-    private int radius;
+    public Circle(Color c) {
+        super(c);
+    }
 
     @Override
-    public int area() {
-        return (int) (Math.PI * (Math.pow(radius, 2)));
+    public void applyColor() {
+        System.out.print("Color of the circle: ");
+        color.applyColor();
     }
 
 }
