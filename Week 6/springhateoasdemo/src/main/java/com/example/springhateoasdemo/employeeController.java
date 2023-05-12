@@ -56,9 +56,4 @@ public class employeeController {
 
         return new ResponseEntity<Employee>(employee, HttpStatus.OK);
     }
-
-    @GetMapping("/error")
-    public String showError() {
-        return "An error has occured";
-    }
 }
