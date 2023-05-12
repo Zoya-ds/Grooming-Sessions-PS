@@ -20,6 +20,8 @@ public class quesFour {
 
         User us2 = new UserTwo(); // upcasting
         us2.Name();
+        System.out.println(us1.salary);
+        System.out.println(us2.salary); // variables will not be upcasted?
 
     }
 

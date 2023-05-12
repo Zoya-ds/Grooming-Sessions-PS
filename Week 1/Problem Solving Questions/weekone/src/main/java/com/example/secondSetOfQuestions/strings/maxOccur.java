@@ -27,6 +27,8 @@ public class maxOccur {
         for (Character ch : st.toCharArray()) {
             if (count.keySet().contains(ch)) {
                 count.put(ch, count.get(ch) + 1);
+            } else if (ch == ' ') {
+                continue;
             } else {
                 count.put(ch, 1);
             }

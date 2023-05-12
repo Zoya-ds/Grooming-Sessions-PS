@@ -29,7 +29,7 @@ public final class immutableClass {
         for (Integer i : arrayList) {
             temp.add(i);
         }
-        return temp; // returning a copy
+        return temp; // returning a deep copy
 
         // return arrayList; //returning the instance variable
     }

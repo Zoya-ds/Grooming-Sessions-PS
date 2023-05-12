@@ -4,12 +4,13 @@ public class Sparrow implements Bird {
 
     @Override
     public void fly() {
-        System.out.println("Flying sparrow");
+        System.out.println("Sparrow is flying");
     }
 
     @Override
     public void speak() {
         System.out.println("Chirp chirp");
+
     }
 
 }

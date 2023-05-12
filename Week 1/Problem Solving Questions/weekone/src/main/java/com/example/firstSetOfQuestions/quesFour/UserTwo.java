@@ -2,6 +2,8 @@ package com.example.firstSetOfQuestions.quesFour;
 
 public class UserTwo extends User {
 
+    float salary = 200;
+
     void Name() {
         System.out.println("Method overridden...");
     }

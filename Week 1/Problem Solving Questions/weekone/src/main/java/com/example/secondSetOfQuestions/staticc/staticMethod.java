@@ -26,6 +26,7 @@ public class staticMethod {
         staticMethod s1Impl = new staticMethod();
 
         s1Impl.counter();
+        s1Impl.counter();
         s1Impl.display(); // static methods can be called using an instance
 
     }

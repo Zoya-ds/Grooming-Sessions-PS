@@ -4,18 +4,15 @@ import java.util.Scanner;
 
 // we can create custom errors
 // but cannot handle them
-//comes under Iterable
+// comes under Iterable
 
 public class exceptionTwo {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws NameNotFoundException {
 
         Scanner sc = new Scanner(System.in);
         System.out.print("Enter name: ");
         String name = sc.nextLine();
-
-        System.out.println("Enter mobile number: ");
-        long mobileNumber = 0;
 
         int flag = 0;
 
@@ -26,6 +23,8 @@ public class exceptionTwo {
             System.out.println("Name: " + name);
         }
 
+        System.out.println("Enter mobile number: ");
+        long mobileNumber = sc.nextLong();
         String validMobile = String.valueOf(mobileNumber);
 
         if (validMobile.length() != 10) {
@@ -37,6 +36,7 @@ public class exceptionTwo {
 
         if (flag == 2)
             System.out.println("No info found!");
+
     }
 
 }
