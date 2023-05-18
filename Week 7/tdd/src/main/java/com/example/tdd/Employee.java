@@ -1,4 +1,4 @@
-package com.example;
+package com.example.tdd;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -6,21 +6,17 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.NoArgsConstructor;
 
 @Getter
 @Setter
+@NoArgsConstructor
 @Entity
 public class Employee {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private long id;
+    private int eid;
+    private String ename;
 
-    private String name;
-    private String email;
-
-    Employee(String name, String email) {
-        this.name = name;
-        this.email = email;
-    }
 }
